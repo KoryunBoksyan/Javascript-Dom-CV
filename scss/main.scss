@@ -1,0 +1,180 @@
+@import "variables";
+@import "mixins";
+@import "navbar";
+
+
+* {
+  margin: 0;
+  font-family: sans-serif;
+  
+}
+
+.main_container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 30% 2fr;
+  grid-template-rows: 1fr 1fr 100px;
+  gap: 20px;
+  min-height: 200vh;
+  grid-template-areas: 
+  'left_column work_experience'
+  'left_column education' 
+  'footer footer'
+  ;
+}
+
+.left_column {
+  grid-area: left_column;
+  background-color: #ccc;
+  span{
+    i{
+      color: green;
+      padding-right: 10px;
+    }
+  }
+  @include box-shadow(1px, 2px, 9px, #333);
+  .percent {
+    @include percent(2px, rgb(17, 145, 55));
+  }
+}
+
+.work_experience {
+  grid-area: work_experience;
+  background-color: rgb(233, 233, 233);
+  @include box-shadow(1px, 2px, 9px, #333);
+  padding-top: 35px;
+  padding-left: 20px;
+i{
+  color: green;
+  font-size: 35px;
+}
+b{
+  color:rgb(150, 151, 150) ;
+  font-size: 30px;
+}
+div{
+  padding-top: 20px;
+  h5{
+    font-size: 20px;
+    color: rgb(150, 151, 150);
+    padding-bottom: 15px;
+  }
+  h6{
+    i{
+      margin-right: 10px;
+      font-size: 15px;
+    }
+    b{
+      font-size: 15px;
+      color: green;
+
+    }
+  }
+  span {
+    font-size: 15px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 5px;
+  }
+  p{
+    padding-top: 20px;
+    width: 90%;
+  }
+}
+
+}
+
+.education {
+  grid-area: education;
+  background-color: rgb(233, 233, 233);
+  @include box-shadow(1px, 2px, 9px, #333);
+  padding-top: 35px;
+  padding-left: 20px;
+i{
+  color: green;
+  font-size: 35px;
+}
+b{
+  color:rgb(150, 151, 150) ;
+  font-size: 30px;
+}
+div{
+  padding-top: 20px;
+  h5{
+    font-size: 20px;
+    color: rgb(150, 151, 150);
+    padding-bottom: 15px;
+  }
+  h6{
+    i{
+      margin-right: 10px;
+      font-size: 15px;
+    }
+    b{
+      font-size: 15px;
+      color: green;
+
+    }
+  }
+  span{
+    font-size: 15px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 5px;
+  }
+  p{
+    padding-top: 20px;
+    width: 90%;
+  }
+}
+}
+
+.footer {
+  grid-area: footer;
+  background-color: green;
+  @include box-shadow(1px, 2px, 9px, #333);
+  div{
+    text-align: center;
+    padding-top: 20px;
+    p{
+      color: white;
+      font-size: 16px;
+      a{
+        color: white;
+        &:hover{
+          color: rgb(196, 192, 192);
+        }
+      }
+    }
+    i{
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:hover{
+        cursor: pointer;
+        color: rgb(185, 181, 181);
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .main_container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 28% 25% 100px;
+    gap: 20px;
+    grid-template-areas: 
+    ' left_column '
+    'work_experience'
+    ' education' 
+    ' footer'
+    ;
+  }
+.work_experience{
+  height: 100vh;
+}
+
+}
